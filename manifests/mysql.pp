@@ -32,9 +32,10 @@ class powerdns::mysql(
     default => $powerdns::params::package_provider
   }
 
+  # Install mysql add-on for powernds
   package { $package:
     ensure   => $ensure,
-    require  => Package[$powerdns::params::package],
+    # require  => Package[$powerdns::params::package],
     # provider => $package_provider,
     # source   => $package_source
   }
@@ -47,6 +48,6 @@ class powerdns::mysql(
     backup  => '.bak',
     content => template('powerdns/pdns.mysql.local.erb'),
     notify  => Service['pdns'],
-    require => [ Package[$powerdns::params::package], Package[$package] ]
+    # require => [ Package[$powerdns::params::package], Package[$package] ]
   }
 }
