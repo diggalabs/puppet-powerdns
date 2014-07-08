@@ -6,7 +6,7 @@
 #
 class powerdns::package(
   $package = $powerdns::params::package,
-  $ensure = 'present',
+  $ensure = 'latest',
   $source = ''
 ) inherits powerdns::params {
 
