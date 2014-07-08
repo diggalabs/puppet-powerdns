@@ -13,7 +13,7 @@ class powerdns::params {
 
   $package_provider = $::operatingsystem ? {
     /(?i:centos|redhat|amazon)/  => 'rpm',
-    default               => 'dpkg'
+    default               => 'apt'
   }
 
   $package_psql = $::operatingsystem ? {
