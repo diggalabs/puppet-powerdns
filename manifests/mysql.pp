@@ -35,8 +35,8 @@ class powerdns::mysql(
   package { $package:
     ensure   => $ensure,
     require  => Package[$powerdns::params::package],
-    provider => $package_provider,
-    source   => $package_source
+    # provider => $package_provider,
+    # source   => $package_source
   }
 
   file { $powerdns::params::mysql_cfg_path:
